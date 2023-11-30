@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8" />
         <title>마자라 스튜디오 : Mazara Studio - Zara's Portfolio</title>
         <link href="./css/styles.css" rel="stylesheet" />
-        <script src="script.js"></script>
+        <script src="./js/scripts.js"></script>
     </head>
     <body>
+        <!-- Top Menu Bar -->
         <header class = "topbar">
             <div class = "siteName">
                 
@@ -18,11 +20,12 @@
                     <li class="primary-botton"><a href="portfolio.html">
                         <span class="primary-colored">P</span>ortfolio
                         </a></li>
-                    <li class="primary-botton"><a href="#">Contact</a></li>
+                    <li class="primary-botton"><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
 
         </header>
+        <!-- Side Menu Bar -->
         <aside class="sidemenu">
 
             <nav class="floatnav">
@@ -39,39 +42,77 @@
                 </li>
             </nav>
         </aside>
+        <!-- 메인화면 -->
+        <div class = "main-visual">
+            <p class="Mazara" style="font-size: 8rem; align-self: center; padding-bottom: 1%; font-weight: 300;">
+                M<span class="primary-colored">A</span>ZARA <span class="secondary-colored">S</span>TUDIO
+            </p>
+            <p class="deco-primary">
+                For the all Homo Ludens
+            </p>
+            <br><br><br><br>
+        </div>
         <main>
             <div class="wrapper">
-                <div class = "main-visual">
-                    <p class="Mazara" style="font-size: 8rem; align-self: center; padding-bottom: 20px; font-weight: 300;">
-                        M<span class="primary-colored">A</span>ZARA <span class="secondary-colored">S</span>TUDIO
-                    </p>
-                </div>
+                <!-- 제목 -->
                 <br><br><br><br><br><br><br><br><br><br>
                 <article class="headline">
                     <h1 class="title-primary" style="font-size: 4.2rem; margin-left: 0px;">Works</h1>
-                </article>
-                <hr><br>
-                <h1 class="title-primary">The Ravage of <span class ="primary-colored">T</span>iger</h1>
-                <ul class="tag-button">
-                    <li class="active"> Project </li>
-                    <li> Animation </li>
-                    <li> Modeling </li>
-                </ul>
-                <br>
-                <a href=""class="dropdown">
                     
-                </a>
-                <h1 class="secondary-title">Introduction</h1>
-                <p>Email : qaz_9856@naver.com</p>
-                <article class="text-box">
-                    <h2>Portpolio</h2>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    sda
+                    <hr><br>
+                </article>
+                <!-- 첫번째 -->
+                <article id="index_01">
+                    <section class="title-section">
+                        <h1 class="title-primary">The Ravage of <span class ="primary-colored">T</span>iger</h1>
+                        <ul class="tag-button">
+                            <li class="active"> Personal Project </li>
+                            <li> Animation </li>
+                            <li> Modeling </li>
+                            <li> 2022 </li>
+                        </ul>
+                        <br>
+                    </section>
+                    <section class="dropdown-section">
+
+                        <h1 class="title-secondary">
+                            <button class="dropdown-button dropdown-active" onclick="dropdown_close(this)">
+                            </button>
+                            Introduction 
+                        </h1>
+                        <div class="dropdown-contents">
+                                <hr>
+                                <div class="image-box">
+                                    <img src="images/main_image.png" style="flex-grow: 1;">
+                                </div>
+                                <div class="text-box">
+                                    하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!
+                                </div>
+                                <div class="text-box">
+                                    하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!하이 모두들 안녕 내가 누군지 아니? I am IronMan!
+                                </div>
+                                <br>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h1 class="title-secondary">
+                            Modeling
+                        </h1>
+                    </section>
+
+                    <div class="text-box">
+                        하이 모두들 안녕 내가 누군지 아니?
+                    </div>
                 </article>
                 <div class="project-list">
                 </div>
                 
             </div>
         </main>
+        <footer>
+
+            
+        </footer>
     </body>
 <html>
