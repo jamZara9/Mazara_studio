@@ -189,7 +189,7 @@ header.topbar {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 1200px;
+  max-width: 1110px;
   display: flex;
 }
 
