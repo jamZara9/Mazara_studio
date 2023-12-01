@@ -252,7 +252,6 @@ header.topbar {
 
 .dropdown-section{
     height:auto;
-    transition: 1s ease height;
 }
 
 .dropdown-button{
@@ -327,4 +326,13 @@ header.topbar {
     //max-width: 50%;
     box-shadow: inset 0 0 20px red;
     //background-color: wheat;
+}
+
+@media screen and (min-width: 810px) {
+	body {
+		//background-color: lightgreen;
+	}
+    .card-list{
+        grid-template-columns: repeat(5, 1fr);
+    }
 }

@@ -17,10 +17,11 @@ function dropdown_close(btn) {
 
 
 function dropdown_open(btn){
+    btn.disabled = true;
     let dropdownComponents = btn.parentElement.parentElement.getElementsByClassName("dropdown-contents")[0]
     let scrollHeight = dropdownComponents.scrollHeight
     btn.classList.add("dropdown-active")
     btn.setAttribute("onClick", "dropdown_close(this)")
     dropdownComponents.setAttribute("style", "height:"+ scrollHeight + "px")
-    setTimeout(() => {dropdownComponents.setAttribute("style", "height:auto")}, 1001)
+    setTimeout(() => {dropdownComponents.setAttribute("style", "height:auto"); btn.disabled = false;}, 1000)
 }
