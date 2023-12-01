@@ -305,3 +305,26 @@ header.topbar {
     padding: 1px 8px;
     color: white;
 }
+
+/* cards */
+
+.card-box{
+    margin: 0px 4rem;
+}
+
+.card-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    //grid-auto-rows: 200px;
+    gap: 2rem;
+    box-shadow: inset 0 0 20px blue;
+    
+}
+
+.card-list li{
+    border-radius: 20px;
+    aspect-ratio: 9/11;
+    //max-width: 50%;
+    box-shadow: inset 0 0 20px red;
+    //background-color: wheat;
+}
