@@ -344,16 +344,23 @@ header.topbar {
     //opacity: 0.2;
     width: 100%;
     height: 100%;
+    left: 50%;
+    top: 0%;
+    translate: (-50%);
     object-fit: cover;
     box-shadow: inset 0 0 20px yellow;
+    transition: 1s ease translate;
+    transition: 2s ease width;
+    transition: .5s ease height;
 }
 
 .card-list li:hover img{
-    //margin: 20px;
     width: 80%;
     height: 50%;
-    transition: 1s ease width;
-    transition: 1s ease height;
+    top: 10%;
+    transition: 1s ease translate;
+    transition: 2s ease width;
+    transition: .5s ease height;
     box-shadow: inset 0 0 20px blue;
 }
 

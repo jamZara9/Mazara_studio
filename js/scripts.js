@@ -25,3 +25,7 @@ function dropdown_open(btn){
     dropdownComponents.setAttribute("style", "height:"+ scrollHeight + "px")
     setTimeout(() => {dropdownComponents.setAttribute("style", "height:auto"); btn.disabled = false;}, 1000)
 }
+
+function goIndex(btn){
+    alert("인덱스로 이동")
+}
