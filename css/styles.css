@@ -267,7 +267,7 @@ header.topbar {
 
 /* cards */
 .card-box {
-  margin: 0px 4rem;
+  margin: 0px 8rem;
 }
 
 .card-list {
@@ -278,12 +278,42 @@ header.topbar {
 }
 
 .card-list li {
+  position: relative;
   border-radius: 20px;
   aspect-ratio: 9/11;
   box-shadow: inset 0 0 20px red;
+  overflow: hidden;
+}
+
+.card-text {
+  position: absolute;
+  margin: 0px 15px;
+  bottom: 10px;
+  font-family: "Merriweather", serif;
+}
+
+.card-list li img {
+  position: relative;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: inset 0 0 20px yellow;
+}
+
+.card-list li:hover img {
+  width: 80%;
+  height: 50%;
+  transition: 1s ease width;
+  transition: 1s ease height;
+  box-shadow: inset 0 0 20px blue;
 }
 
 @media screen and (min-width: 810px) {
+  body {
+    background-color: none;
+  }
   .card-list {
     grid-template-columns: repeat(5, 1fr);
   }
