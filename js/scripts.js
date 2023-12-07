@@ -1,3 +1,18 @@
+// 기반 함수
+function throttle(callback, limit = 100) {
+  let waiting = false
+  return function() {
+      if(!waiting) {
+          callback.apply(this, arguments)
+          waiting = true
+          setTimeout(() => {
+              waiting = false
+          }, limit)
+      }
+  }
+}
+
+// 드롭다운 펑션
 function dropdown_close(btn) { 
     
     let dropdown = btn.parentElement.parentElement.getElementsByClassName("dropdown-contents")[0]
@@ -26,6 +41,36 @@ function dropdown_open(btn){
     setTimeout(() => {dropdownComponents.setAttribute("style", "height:auto"); btn.disabled = false;}, 1000)
 }
 
-function goIndex(btn){
+// 이동 함수?
+function goIndex(btn, index_id){
     alert("인덱스로 이동")
 }
+
+// 패럴랙스 스크롤
+function classToggle_byScroll () {
+  console.log("스크롤")
+  let elementsWithClass = document.querySelectorAll('.parallexable');
+  elementsWithClass.forEach(function(element){
+    let div_up = window.scrollY + element.getBoundingClientRect().top
+    let div_down = window.scrollY + element.getBoundingClientRect().bottom
+    let startRatio = 40
+    let offset = (div_down-div_up)/100*startRatio
+    let window_bottom = window.scrollY + window.innerHeight
+    //console.log(div_up, div_down, offset)
+    if (div_up + offset > window_bottom && !element.classList.contains('parallex-down')){
+      // 투명해짐
+      console.log("투명해짐",div_up, div_down, offset)
+      element.classList.add('parallex-down')
+    }
+    else if (div_up + offset < window_bottom && element.classList.contains('parallex-down')){
+      // 불러옴
+      console.log("불러옴", div_up , div_down, offset)
+      element.classList.remove('parallex-down')
+    }
+  }
+  )
+}
+
+document.addEventListener('DOMContentLoaded', classToggle_byScroll)
+//window.addEventListener('scroll', classToggle_byScroll )
+window.addEventListener('scroll', throttle(classToggle_byScroll, 50))

@@ -1,9 +1,10 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap");
 :root {
   font-family: "NanumGothic", sans-serif;
   font-size: 10px;
   --gap: 6px;
+  --transition-time-cards: 0.3s;
   --primary-color:#0bbd46;
   --secondary-color: #b6ebb8;
   --light-gray:#b3b3b3;
@@ -148,7 +149,6 @@ header.topbar {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0 0 50px rgb(196, 196, 196);
   margin: 0 auto;
   height: 100vh;
 }
@@ -203,12 +203,24 @@ header.topbar {
 .image-discription {
   text-align: center;
   font-size: 1.2rem;
-  color: var(--light-gray);
 }
 
 .text-box {
   margin: 40px 50px;
   margin-bottom: 20px;
+}
+
+/* 패럴랙스 */
+.parallexable {
+  transform: translateY(0px);
+  opacity: 1;
+  transition: 0.6s ease transform, 0.6s opacity ease-in;
+}
+
+.parallex-down {
+  transform: translateY(30px);
+  opacity: 0;
+  transition: opacity 0.6s ease-out, 0.6s ease transform;
 }
 
 /* 드롭다운 */
@@ -272,17 +284,24 @@ header.topbar {
 
 .card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 2rem;
-  box-shadow: inset 0 0 20px blue;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.8rem;
 }
 
 .card-list li {
   position: relative;
   border-radius: 20px;
   aspect-ratio: 9/11;
-  box-shadow: inset 0 0 20px red;
   overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid rgb(11, 189, 70);
+  transition: 0.15s 0.15s ease box-shadow, 0.3s ease border;
+}
+
+.card-list li:hover {
+  border: 1px solid rgba(11, 189, 70, 0);
+  box-shadow: inset 20px -40px 40px 10px rgba(22, 22, 22, 0.2);
+  transition: 0.15s 0.15s ease box-shadow, 0.3s ease border;
 }
 
 .card-text {
@@ -292,33 +311,39 @@ header.topbar {
   font-family: "Merriweather", serif;
 }
 
+.card-list li:hover > .card-text {
+  font-weight: 500;
+  color: white;
+  transition: 0.3s ease color;
+}
+
 .card-list li img {
   position: relative;
-  margin: 0px;
-  width: 100%;
-  height: 100%;
   left: 50%;
-  top: 0%;
   translate: -50%;
   -o-object-fit: cover;
      object-fit: cover;
-  box-shadow: inset 0 0 20px yellow;
-  transition: 1s ease translate;
-  transition: 2s ease width;
-  transition: 0.5s ease height;
+  z-index: -1;
+  border: 1px solid var(--primary-color);
+  border-radius: 12px 12px 4px 30px;
+  padding: 0px;
+  width: 90%;
+  height: 65%;
+  top: 4%;
+  transition: 0.7s ease top, 0.7s ease width, 0.7s ease height, 0.7s ease border-radius;
 }
 
 .card-list li:hover img {
-  width: 80%;
-  height: 50%;
-  top: 10%;
-  transition: 1s ease translate;
-  transition: 2s ease width;
-  transition: 0.5s ease height;
-  box-shadow: inset 0 0 20px blue;
+  border: 0px solid var(--primary-color);
+  box-shadow: inset 0 0 50px black;
+  border-radius: 12px 12px 12px 20px;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  transition: var(--transition-time-cards) ease top, var(--transition-time-cards) ease width, var(--transition-time-cards) ease height, var(--transition-time-cards) ease border-radius;
 }
 
-@media screen and (min-width: 810px) {
+@media screen and (min-width: 1000px) {
   body {
     background-color: none;
   }
