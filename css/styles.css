@@ -132,9 +132,17 @@ header.topbar {
   opacity: 0.9;
 }
 
+.floatnav a {
+  height: 5px;
+  width: 30px;
+  margin: 0px;
+  box-shadow: 0 0 10px blue;
+}
+
 .floatnav img {
   width: 35px;
   margin: 5px;
+  box-shadow: 0 0 10px var(--dark-gray);
 }
 
 /* Components */
@@ -305,16 +313,19 @@ header.topbar {
 }
 
 .card-text {
+  font-family: "Merriweather", serif;
+  font-size: 1.5rem;
   position: absolute;
   margin: 0px 15px;
-  bottom: 10px;
-  font-family: "Merriweather", serif;
+  bottom: 5%;
+  transition: 0.3s ease color, 0.3s ease font-size;
 }
 
 .card-list li:hover > .card-text {
+  font-size: 2rem;
   font-weight: 500;
   color: white;
-  transition: 0.3s ease color;
+  transition: 0.3s ease color, 0.3s ease font-size;
 }
 
 .card-list li img {
@@ -328,7 +339,7 @@ header.topbar {
   border-radius: 12px 12px 4px 30px;
   padding: 0px;
   width: 90%;
-  height: 65%;
+  height: 70%;
   top: 4%;
   transition: 0.7s ease top, 0.7s ease width, 0.7s ease height, 0.7s ease border-radius;
 }

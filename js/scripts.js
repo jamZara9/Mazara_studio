@@ -71,6 +71,48 @@ function classToggle_byScroll () {
   )
 }
 
+// 스크롤 이벤트 리스너 추가
 document.addEventListener('DOMContentLoaded', classToggle_byScroll)
-//window.addEventListener('scroll', classToggle_byScroll )
 window.addEventListener('scroll', throttle(classToggle_byScroll, 50))
+
+/* ------ 사이드 바 ------ */ 
+/*
+let isPress = false,   // 마우스를 눌렀을 때
+    prevPosX = 0,      // 이전에 위치한 X값
+    prevPosY = 0;      // 이전에 위치한 Y값
+    
+let target = document.querySelector(".sidemenu");
+console.log(target)
+
+
+function sideNavDrag_click (sideNav) {
+  console.log("눌렀다!");
+  prevPosX = sideNav.clientX;
+  prevPosY = sideNav.clientY;
+
+  isPress = true;
+}
+function sideNavDrag_move (sideNav) {
+  if (!isPress) {
+    return;
+  }
+  const posX = prevPosX - e.clientX; 
+  const posY = prevPosY - e.clientY; 
+  
+  prevPosX = e.clientX; 
+  prevPosY = e.clientY; 
+  
+  sideNav.style.left = ($target.offsetLeft - posX) + "px";
+  sideNav.style.top = ($target.offsetTop - posY) + "px";
+}
+function end() {
+  isPress = false;
+}
+
+// 드래그 구현에 필요한 이벤트
+target.addEventListener('mousedown', sideNavDrag_click);
+target.addEventListener('mouseup', end);
+
+// 요소의 상위 요소 (임시로 window)
+window.addEventListener = ('mousemove' , sideNavDrag_move);
+*/
